@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chanify Options</title>
+    <link rel="stylesheet" href="css/options.css">
+</head>
+<body>
+    <h1>Chanify Options</h1>
+
+    <h3>New Target:</h3>
+    <form>
+        <label>
+            Name:
+            <input id="name" type="name" value="" placeholder="alias" required />
+        </label>
+
+        <label>
+            Endpoint:
+            <input id="endpoint" type="url" value="" placeholder="https://api.chanify.net" required />
+        </label>
+
+        <label>
+            Token:
+            <input id="token" type="text" value="" />
+        </label>
+
+        <label>
+            Sound:
+            <input id="sound" type="checkbox" />
+        </label>
+
+        <input id="submit" type="submit" value="Add" />
+    </form>
+
+    <br/><br/>
+
+    <h3>Target List:</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th style="width: 100px;">Name</th>
+                <th style="width: 100px;">Endpoint</th>
+                <th style="width: 100px;">Token</th>
+                <th style="width: 50px;">Sound</th>
+                <th style="width: 50px;">Action</th>
+            </tr>
+        </thead>
+        <tbody id="items"></tbody>
+    </table>
+
+    <script src="js/options.js"></script>
+</body>
+</html>
