@@ -22,6 +22,6 @@ function loadItems() {
 }
 
 loadItems();
-document.getElementById('items').onchange = function (e) {
+document.getElementById('items').onchange = function () {
     chrome.storage.sync.set({ 'active-target': this.value });
 };

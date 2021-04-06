@@ -1,9 +1,4 @@
-chrome.runtime.onInstalled.addListener(async () => {
-    loadContenMenus();
-    console.log('Chanify extensions init.');
-});
-
-function loadContenMenus() {
+chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
         id: 'chsent/selection',
         title: 'Send text',
@@ -24,12 +19,13 @@ function loadContenMenus() {
         title: 'Send page url',
         contexts: ['page']
     });
-    chrome.contextMenus.onClicked.addListener(function(info, _) {
-        if (info.menuItemId.startsWith('chsent/')) {
-            onSendClicked(info);
-        }
-    });
-}
+});
+
+chrome.contextMenus.onClicked.addListener(function(info, _) {
+    if (info.menuItemId.startsWith('chsent/')) {
+        onSendClicked(info);
+    }
+});
 
 function base64ToBlob(dataURI) {
     var ss = dataURI.split(',');
@@ -77,7 +73,7 @@ function sendTo(form) {
 
 function onSendClicked(info) {
     var form = new FormData();
-    if (info.selectionText != null && info.selectionText.length > 0) {
+    if (info.menuItemId == 'chsent/selection' && info.selectionText != null && info.selectionText.length > 0) {
         form.append('text', info.selectionText);
         sendTo(form);
     } else if (info.mediaType == 'image') {

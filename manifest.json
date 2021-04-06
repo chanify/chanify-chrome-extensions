@@ -1,6 +1,6 @@
 {
     "name": "Chanify",
-    "description": "Chanify is a safe and simple notification tools. For developers, system administrators, and everyone can push notifications to your iPhone.",
+    "description": "Chanify is a safe and simple notification tools. Everyone can push notifications to your iPhone.",
     "version": "0.9.0",
     "manifest_version": 3,
     "icons": {
