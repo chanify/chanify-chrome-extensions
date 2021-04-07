@@ -2,52 +2,54 @@
 <html>
 <head>
     <title>Chanify Options</title>
-    <link rel="stylesheet" href="css/options.css">
+    <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
-    <h1>Chanify Options</h1>
+    <h1 data-localize="__MSG_options_title__"></h1>
 
-    <h3>New Target:</h3>
+    <h3 data-localize="__MSG_new_target__"></h3>
+
     <form>
         <label>
-            Name:
-            <input id="name" type="name" value="" placeholder="alias" required />
+            <span data-localize="__MSG_name__:"></span>
+            <input id="name" type="name" data-localize-placeholder="__MSG_alias__" required />
         </label>
 
         <label>
-            Endpoint:
+            <span data-localize="__MSG_endpoint__:"></span>
             <input id="endpoint" type="url" value="" placeholder="https://api.chanify.net" required />
         </label>
 
         <label>
-            Token:
+            <span data-localize="__MSG_token__:"></span>
             <input id="token" type="text" value="" />
         </label>
 
         <label>
-            Sound:
+            <span data-localize="__MSG_sound__:"></span>
             <input id="sound" type="checkbox" />
         </label>
 
-        <input id="submit" type="submit" value="Add" />
+        <input id="submit" type="submit" data-localize-value="__MSG_add__" />
     </form>
 
     <br/><br/>
 
-    <h3>Target List:</h3>
+    <h3 data-localize="__MSG_target_list__:"></h3>
     <table border="1">
         <thead>
             <tr>
-                <th style="width: 100px;">Name</th>
-                <th style="width: 100px;">Endpoint</th>
-                <th style="width: 100px;">Token</th>
-                <th style="width: 50px;">Sound</th>
-                <th style="width: 50px;">Action</th>
+                <th style="width: 100px;" data-localize="__MSG_name__"></th>
+                <th style="width: 100px;" data-localize="__MSG_endpoint__"></th>
+                <th style="width: 100px;" data-localize="__MSG_token__"></th>
+                <th style="width: 50px;" data-localize="__MSG_sound__"></th>
+                <th style="width: 50px;" data-localize="__MSG_action__"></th>
             </tr>
         </thead>
         <tbody id="items"></tbody>
     </table>
 
+    <script src="js/common.js"></script>
     <script src="js/options.js"></script>
 </body>
 </html>

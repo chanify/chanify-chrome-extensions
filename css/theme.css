@@ -1,0 +1,20 @@
+:root {
+    --lable-color: #000;
+    --bg-color: #f2f2f7;
+    --tint-color: #0a84ff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --lable-color: #fff;
+        --bg-color: #1c1c1e;
+    }
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+body, span {
+    color: var(--lable-color);
+}

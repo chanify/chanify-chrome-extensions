@@ -30,7 +30,7 @@ function createCheckbox(checked, onChange) {
 function createButton(name, onClick) {
     var input = document.createElement('input');
     input.type = 'button';
-    input.value = name || "";
+    input.value = chrome.i18n.getMessage(name) || "";
     input.onclick = onClick;
     return input;
 }
@@ -79,7 +79,7 @@ function formatToken(token) {
     return "";
 }
 
-function loadItems() {
+document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.sync.get(null, function(result) {
         let tbl = document.getElementById('items');
         for (const key in result) {
@@ -93,12 +93,10 @@ function loadItems() {
                 row.insertCell().appendChild(createCheckbox(item['sound'], function () {
                     updateItem(key, { 'sound': this.checked });
                 }));
-                row.insertCell().appendChild(createButton('Delete', function() {
+                row.insertCell().appendChild(createButton('delete', function() {
                     deleteItem(key);
                 }));
             }
         }
     });
-}
-
-loadItems();
+});

@@ -5,7 +5,10 @@ function createItem(key, name) {
     return option;
 }
 
-function loadItems() {
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('items').onchange = function () {
+        chrome.storage.sync.set({ 'active-target': this.value });
+    };
     chrome.storage.sync.get(null, function(result) {
         var actived = "";
         let lst = document.getElementById('items');
@@ -19,9 +22,4 @@ function loadItems() {
         }
         lst.value = actived;
     });
-}
-
-loadItems();
-document.getElementById('items').onchange = function () {
-    chrome.storage.sync.set({ 'active-target': this.value });
-};
+});

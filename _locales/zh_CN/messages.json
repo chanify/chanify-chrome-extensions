@@ -1,0 +1,17 @@
+{
+    "options": { "message": "配置选项" },
+    "options_title": { "message": "Chanify配置" },
+    "new_target": { "message": "新建发送目标" },
+    "target_list": { "message": "发送目标列表" },
+    "choose_target": { "message": "选择发送目标" },
+    "none": { "message": "无" },
+    "alias": { "message": "别名" },
+    "name": { "message": "名称" },
+    "endpoint": { "message": "节点入口" },
+    "token": { "message": "令牌" },
+    "sound": { "message": "声音提醒" },
+    "add": { "message": "添加" },
+    "delete": { "message": "删除" },
+    "action": { "message": "操作" },
+    "send_text": { "message": "发送文本" }
+}

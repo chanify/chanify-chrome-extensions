@@ -1,0 +1,17 @@
+{
+    "options": { "message": "Options" },
+    "options_title": { "message": "Chanify Options" },
+    "new_target": { "message": "New Target" },
+    "target_list": { "message": "Target List" },
+    "choose_target": { "message": "Choose Target" },
+    "none": { "message": "None" },
+    "alias": { "message": "alias" },
+    "name": { "message": "Name" },
+    "endpoint": { "message": "Endpoint" },
+    "token": { "message": "Token" },
+    "sound": { "message": "Sound" },
+    "add": { "message": "Add" },
+    "delete": { "message": "Delete" },
+    "action": { "message": "Action" },
+    "send_text": { "message": "Send text" }
+}
