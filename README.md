@@ -1,6 +1,6 @@
 # Chanify Chrome Extensions
 
-[![WebStore](https://img.shields.io/chrome-web-store/v/llpdpmhkemkjeeigibdamadahmhoebdg?style=flat-square)](https://chrome.google.com/webstore/detail/chanify/llpdpmhkemkjeeigibdamadahmhoebdg)
+[![WebStore](https://img.shields.io/chrome-web-store/v/llpdpmhkemkjeeigibdamadahmhoebdg?logo=Google%20Chrome&logoColor=white&style=flat-square)](https://chrome.google.com/webstore/detail/chanify/llpdpmhkemkjeeigibdamadahmhoebdg)
 [![Workflow](https://img.shields.io/github/workflow/status/chanify/chanify-chrome-extensions/ci?label=build&logo=github&style=flat-square)](https://github.com/chanify/chanify-chrome-extensions/actions?workflow=ci)
 [![GitHub](https://img.shields.io/github/license/chanify/chanify-chrome-extensions?style=flat-square)](LICENSE)
 
