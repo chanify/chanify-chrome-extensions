@@ -2,7 +2,10 @@
 
 [![WebStore](https://img.shields.io/chrome-web-store/v/llpdpmhkemkjeeigibdamadahmhoebdg?logo=Google%20Chrome&logoColor=white&style=flat-square)](https://chrome.google.com/webstore/detail/chanify/llpdpmhkemkjeeigibdamadahmhoebdg)
 [![Workflow](https://img.shields.io/github/workflow/status/chanify/chanify-chrome-extensions/ci?label=build&logo=github&style=flat-square)](https://github.com/chanify/chanify-chrome-extensions/actions?workflow=ci)
+[![CodeQL](https://img.shields.io/github/workflow/status/chanify/chanify-chrome-extensions/codeql?label=codeql&logo=github&style=flat-square)](https://github.com/chanify/chanify-chrome-extensions/actions?workflow=codeql)
 [![GitHub](https://img.shields.io/github/license/chanify/chanify-chrome-extensions?style=flat-square)](LICENSE)
+[![Rating](https://img.shields.io/chrome-web-store/rating/llpdpmhkemkjeeigibdamadahmhoebdg?style=flat-square)](https://chrome.google.com/webstore/detail/chanify/llpdpmhkemkjeeigibdamadahmhoebdg)
+[![Users](https://img.shields.io/chrome-web-store/users/llpdpmhkemkjeeigibdamadahmhoebdg?style=flat-square)](https://chrome.google.com/webstore/detail/chanify/llpdpmhkemkjeeigibdamadahmhoebdg)
 
 Chanify is a safe and simple notification tools. For developers, system administrators, and everyone can push notifications with API.
 This repository is a chrome extensions for Chanify.
