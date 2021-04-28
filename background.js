@@ -55,6 +55,9 @@ function sendTo(form) {
                     if (item['sound']) {
                         form.append('sound', '1');
                     }
+                    if (item['autocopy']) {
+                        form.append('autocopy', 1);
+                    }
                     fetch(endpoint + '/v1/sender', {
                         method: 'POST',
                         mode: 'no-cors',

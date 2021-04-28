@@ -4,6 +4,7 @@ document.getElementById('submit').addEventListener('click', function (e) {
     let endpoint = document.getElementById('endpoint').value || "";
     let token = document.getElementById('token').value || "";
     let sound = document.getElementById('sound').checked || false;
+    let autocopy = document.getElementById('autocopy').checked || false;
     if (name.length > 0 && endpoint.length > 0 && token.length > 0) {
         var items = {};
         items['item-' + new Date().getTime()] = JSON.stringify({
@@ -11,6 +12,7 @@ document.getElementById('submit').addEventListener('click', function (e) {
             'endpoint': endpoint,
             'token': token,
             'sound': sound,
+            'autocopy': autocopy,
         });
         chrome.storage.sync.set(items, function() {
             console.log('Save item success');
@@ -92,6 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 row.insertCell().appendChild(document.createTextNode(formatToken(item['token'])));
                 row.insertCell().appendChild(createCheckbox(item['sound'], function () {
                     updateItem(key, { 'sound': this.checked });
+                }));
+                row.insertCell().appendChild(createCheckbox(item['autocopy'], function () {
+                    updateItem(key, { 'autocopy': this.checked });
                 }));
                 row.insertCell().appendChild(createButton('delete', function() {
                     deleteItem(key);

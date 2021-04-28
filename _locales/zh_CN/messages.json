@@ -10,6 +10,7 @@
     "endpoint": { "message": "节点入口" },
     "token": { "message": "令牌" },
     "sound": { "message": "声音提醒" },
+    "autocopy": { "message": "自动复制" },
     "add": { "message": "添加" },
     "delete": { "message": "删除" },
     "action": { "message": "操作" },

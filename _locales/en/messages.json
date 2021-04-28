@@ -10,6 +10,7 @@
     "endpoint": { "message": "Endpoint" },
     "token": { "message": "Token" },
     "sound": { "message": "Sound" },
+    "autocopy": { "message": "AutoCopy" },
     "add": { "message": "Add" },
     "delete": { "message": "Delete" },
     "action": { "message": "Action" },
