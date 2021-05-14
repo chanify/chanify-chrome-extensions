@@ -1,20 +1,175 @@
 :root {
-    --lable-color: #000;
+    --text-color: #000;
+    --text-light-color: #363636;
     --bg-color: #f2f2f7;
+    --bg-light-color: #74748014;
     --tint-color: #0a84ff;
+    --input-bg-color: #78788033;
+    --border-color: #dbdbdb;
+    --button-hover: #ddd;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --lable-color: #fff;
+        --text-color: #fff;
+        --text-light-color: #dbdbdb;
         --bg-color: #1c1c1e;
+        --bg-light-color: #2c2c2e;
+        --input-bg-color: #7878805b;
+        --border-color: #526980;
+        --button-hover: #324759;
     }
 }
 
 body {
     background-color: var(--bg-color);
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Segoe UI Emoji,Apple Color Emoji,Noto Color Emoji,sans-serif;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 10px;
+    word-wrap: break-word;
+    text-rendering: optimizeLegibility;
 }
 
 body, span {
-    color: var(--lable-color);
+    color: var(--text-light-color);
+}
+
+h1, h2, th {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+h1, h2 {
+    margin-bottom: 12px;
+    margin-top: 24px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+label {
+    vertical-align: middle;
+    margin-bottom: 4px;
+    display: inline-block;
+}
+
+input, select {
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    text-rendering: auto;
+    vertical-align: top;
+    margin: 0em;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+}
+
+button, input:not([type=checkbox]):not([type=radio]), input[type=range], select, textarea {
+    -webkit-appearance: none;
+}
+
+input:not([type=checkbox]):not([type=radio]), select {
+    display: block;
+}
+
+button, input[type=button], input[type=checkbox], input[type=radio], input[type=range], input[type=reset], input[type=submit], select {
+    cursor: pointer;
+}
+
+button, input[type=reset], input[type=submit] {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+button:hover, input[type='submit']:hover, input[type='reset']:hover, input[type='button']:hover {
+  background: var(--button-hover);
+}
+
+select {
+    padding: 8px 10px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    width: 100%;
+    table-layout: fixed;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: var(--bg-color);
+}
+
+thead {
+    border-bottom: 1px solid var(--border-color);
+    display: table-header-group;
+    vertical-align: middle;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+}
+
+tr {
+    display: table-row;
+}
+
+th {
+    display: table-cell;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+
+table caption, td, th {
+    text-align: left;
+}
+
+td, th {
+    padding: 6px;
+    vertical-align: center;
+    word-wrap: break-word;
+}
+
+td input {
+    margin-bottom: 0;
+}
+
+tbody tr:nth-child(2n) {
+    background-color: var(--bg-light-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+a span {
+    color: var(--tint-color);
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+::selection {
+    background-color: var(--tint-color);
+    color: var(--text-color);
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
 }

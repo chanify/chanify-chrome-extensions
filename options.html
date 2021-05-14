@@ -7,50 +7,33 @@
 <body>
     <h1 data-localize="__MSG_options_title__"></h1>
 
-    <h3 data-localize="__MSG_new_target__"></h3>
+    <h2 data-localize="__MSG_new_target__"></h2>
 
     <form>
-        <label>
-            <span data-localize="__MSG_name__:"></span>
-            <input id="name" type="name" data-localize-placeholder="__MSG_alias__" required />
-        </label>
-
-        <label>
-            <span data-localize="__MSG_endpoint__:"></span>
-            <input id="endpoint" type="url" value="" placeholder="https://api.chanify.net" required />
-        </label>
-
-        <label>
-            <span data-localize="__MSG_token__:"></span>
-            <input id="token" type="text" value="" />
-        </label>
-
+        <label for="name" data-localize="__MSG_name__:"></label>
+        <input id="name" type="name" style="width:60%" data-localize-placeholder="__MSG_alias_name__" required />
+        <label for="endpoint" data-localize="__MSG_endpoint__:"></label>
+        <input id="endpoint" type="url" style="width:60%" value="" placeholder="https://api.chanify.net" required />
+        <label for="token" data-localize="__MSG_token__:"></label>
+        <input id="token" type="text" style="width:60%" value="" data-localize-placeholder="__MSG_channel_token__" />
+        <input id="sound" type="checkbox" />
+        <label for="sound" data-localize="__MSG_sound__"></label>
         <br/>
-
-        <label>
-            <span data-localize="__MSG_sound__:"></span>
-            <input id="sound" type="checkbox" />
-        </label>
-
-        <label>
-            <span data-localize="__MSG_autocopy__:"></span>
-            <input id="autocopy" type="checkbox" />
-        </label>
-
-        <br/><br/>
-
+        <input id="autocopy" type="checkbox" />
+        <label for="autocopy" data-localize="__MSG_autocopy__"></label>
+        <br/>
         <input id="submit" type="submit" data-localize-value="__MSG_add__" />
     </form>
 
     <br/><br/>
 
-    <h3 data-localize="__MSG_target_list__:"></h3>
-    <table border="1">
+    <h2 data-localize="__MSG_target_list__:"></h2>
+    <table>
         <thead>
             <tr>
                 <th style="width: 100px;" data-localize="__MSG_name__"></th>
-                <th style="width: 100px;" data-localize="__MSG_endpoint__"></th>
-                <th style="width: 100px;" data-localize="__MSG_token__"></th>
+                <th style="width: 120px;" data-localize="__MSG_endpoint__"></th>
+                <th style="width: 120px;" data-localize="__MSG_token__"></th>
                 <th style="width: 50px;" data-localize="__MSG_sound__"></th>
                 <th style="width: 50px;" data-localize="__MSG_autocopy__"></th>
                 <th style="width: 50px;" data-localize="__MSG_action__"></th>

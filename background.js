@@ -1,3 +1,10 @@
+function getVersion() {
+    var manifest = chrome.runtime.getManifest();
+    return `chanify-chrome-exts/${manifest.version}`;
+}
+
+console.log(`version: ${getVersion()}`);
+
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
         id: 'chsent/selection',
