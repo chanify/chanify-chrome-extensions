@@ -1,4 +1,4 @@
-document.getElementById('submit').addEventListener('click', function (e) {
+document.getElementById('submit').addEventListener('click', e => {
     e.preventDefault();
     let name = document.getElementById('name').value || "";
     let endpoint = document.getElementById('endpoint').value || "";
@@ -7,14 +7,14 @@ document.getElementById('submit').addEventListener('click', function (e) {
     let autocopy = document.getElementById('autocopy').checked || false;
     if (name.length > 0 && endpoint.length > 0 && token.length > 0) {
         var items = {};
-        items['item-' + new Date().getTime()] = JSON.stringify({
+        items[`item-${new Date().getTime()}`] = JSON.stringify({
             'name': name,
             'endpoint': endpoint,
             'token': token,
             'sound': sound,
             'autocopy': autocopy,
         });
-        chrome.storage.sync.set(items, function() {
+        chrome.storage.sync.set(items, () => {
             console.log('Save item success');
             window.location.reload();
         });
@@ -38,14 +38,14 @@ function createButton(name, onClick) {
 }
 
 function updateItem(key, item) {
-    chrome.storage.sync.get(key, function(result) {
+    chrome.storage.sync.get(key, result => {
         var items = {};
         var value = JSON.parse(result[key]);
         for (const k in item) {
             value[k] = item[k];
         }
         items[key] = JSON.stringify(value);
-        chrome.storage.sync.set(items, function() {
+        chrome.storage.sync.set(items, () => {
             console.log('Update item success');
         });
     });
@@ -53,9 +53,9 @@ function updateItem(key, item) {
 
 function deleteItem(key) {
     if (key != null && key.startsWith('item-')) {
-        chrome.storage.sync.remove([key], function() {
+        chrome.storage.sync.remove([key], () => {
             document.getElementById(key).remove();
-            chrome.storage.sync.get(null, function(result) {
+            chrome.storage.sync.get(null, result => {
                 if (result['active-target'] == key) {
                     var keyNew = "";
                     for (const k in result) {
@@ -81,8 +81,8 @@ function formatToken(token) {
     return "";
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    chrome.storage.sync.get(null, function(result) {
+document.addEventListener('DOMContentLoaded', () => {
+    chrome.storage.sync.get(null, (result) => {
         let tbl = document.getElementById('items');
         for (const key in result) {
             if (key.startsWith('item-')) {
@@ -92,13 +92,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 row.insertCell().appendChild(document.createTextNode(item['name']));
                 row.insertCell().appendChild(document.createTextNode(item['endpoint']));
                 row.insertCell().appendChild(document.createTextNode(formatToken(item['token'])));
-                row.insertCell().appendChild(createCheckbox(item['sound'], function () {
-                    updateItem(key, { 'sound': this.checked });
+                row.insertCell().appendChild(createCheckbox(item['sound'], e => {
+                    updateItem(key, { 'sound': e.target.checked });
                 }));
-                row.insertCell().appendChild(createCheckbox(item['autocopy'], function () {
-                    updateItem(key, { 'autocopy': this.checked });
+                row.insertCell().appendChild(createCheckbox(item['autocopy'], e => {
+                    updateItem(key, { 'autocopy': e.target.checked });
                 }));
-                row.insertCell().appendChild(createButton('delete', function() {
+                row.insertCell().appendChild(createButton('delete', () => {
                     deleteItem(key);
                 }));
             }

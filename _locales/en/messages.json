@@ -5,6 +5,8 @@
     "target_list": { "message": "Target List" },
     "choose_target": { "message": "Choose Target" },
     "none": { "message": "None" },
+    "info": { "message": "Info" },
+    "images": { "message": "Images" },
     "alias_name": { "message": "Alias" },
     "name": { "message": "Name" },
     "endpoint": { "message": "Endpoint" },

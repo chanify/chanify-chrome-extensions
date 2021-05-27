@@ -22,6 +22,11 @@ chrome.runtime.onInstalled.addListener(() => {
         contexts: ['image']
     });
     chrome.contextMenus.create({
+        id: 'chsent/audio',
+        title: 'Send audio',
+        contexts: ['audio']
+    });
+    chrome.contextMenus.create({
         id: 'chsent/page',
         title: 'Send page url',
         contexts: ['page']
@@ -65,7 +70,7 @@ function sendTo(form) {
                     if (item['autocopy']) {
                         form.append('autocopy', 1);
                     }
-                    fetch(endpoint + '/v1/sender', {
+                    fetch(`${endpoint}/v1/sender`, {
                         method: 'POST',
                         mode: 'no-cors',
                         cache: 'no-cache',
@@ -102,6 +107,9 @@ function onSendClicked(info) {
                 sendTo(form);          
             });
         }
+    } else if (info.mediaType == 'audio') {
+        var audioUrl = info.srcUrl;
+        console.log("audio:", audioUrl);
     } else if (info.linkUrl != null && info.linkUrl.length > 0) {
         form.append('link', info.linkUrl);
         sendTo(form);

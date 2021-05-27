@@ -5,6 +5,8 @@
     "target_list": { "message": "发送目标列表" },
     "choose_target": { "message": "选择发送目标" },
     "none": { "message": "无" },
+    "info": { "message": "信息" },
+    "images": { "message": "图片" },
     "alias_name": { "message": "别名" },
     "name": { "message": "名称" },
     "endpoint": { "message": "节点入口" },

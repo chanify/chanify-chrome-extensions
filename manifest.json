@@ -11,7 +11,7 @@
         "48": "/images/app-48.png",
         "128": "/images/app-128.png"
     },
-    "permissions": [ "storage", "contextMenus" ],
+    "permissions": [ "storage", "contextMenus", "scripting" ],
     "host_permissions": [ "http://*/*", "https://*/*" ],
     "background": {
         "service_worker": "background.js"
