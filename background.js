@@ -87,11 +87,12 @@ function sendTo(form) {
 }
 
 function onSendClicked(info) {
+    console.log(info);
     var form = new FormData();
     if (info.menuItemId == 'chsent/selection' && info.selectionText != null && info.selectionText.length > 0) {
         form.append('text', info.selectionText);
         sendTo(form);
-    } else if (info.mediaType == 'image') {
+    } else if (info.mediaType == 'image' && info.menuItemId != "chsent/link") {
         var imgUrl = info.srcUrl;
         if (imgUrl.startsWith('data:')) {
             let data = base64ToBlob(imgUrl);
@@ -109,7 +110,16 @@ function onSendClicked(info) {
         }
     } else if (info.mediaType == 'audio') {
         var audioUrl = info.srcUrl;
-        console.log("audio:", audioUrl);
+        if (audioUrl.startsWith('http')) {
+            fetch(audioUrl, { mode: 'no-cors' })
+            .then(response => response.blob())
+            .catch(error => console.log('Error:', error))
+            .then(blob => {
+                var form = new FormData();
+                form.append('audio', blob, 'audio');
+                sendTo(form);          
+            });
+        }
     } else if (info.linkUrl != null && info.linkUrl.length > 0) {
         form.append('link', info.linkUrl);
         sendTo(form);
