@@ -87,7 +87,6 @@ function sendTo(form) {
 }
 
 function onSendClicked(info) {
-    console.log(info);
     var form = new FormData();
     if (info.menuItemId == 'chsent/selection' && info.selectionText != null && info.selectionText.length > 0) {
         form.append('text', info.selectionText);
