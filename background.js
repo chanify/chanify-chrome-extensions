@@ -70,6 +70,10 @@ function sendTo(form) {
                     if (item['autocopy']) {
                         form.append('autocopy', 1);
                     }
+                    let interruptionLevel = item['interruption-level'] || "";
+                    if (interruptionLevel.length > 0) {
+                        form.append('interruption-level', interruptionLevel);
+                    }
                     fetch(`${endpoint}/v1/sender`, {
                         method: 'POST',
                         mode: 'no-cors',

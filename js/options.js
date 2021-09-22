@@ -3,6 +3,7 @@ document.getElementById('submit').addEventListener('click', e => {
     let name = document.getElementById('name').value || "";
     let endpoint = document.getElementById('endpoint').value || "";
     let token = document.getElementById('token').value || "";
+    let interruptionLevel = document.getElementById('interruption-level').value || "";
     let sound = document.getElementById('sound').checked || false;
     let autocopy = document.getElementById('autocopy').checked || false;
     if (name.length > 0 && endpoint.length > 0 && token.length > 0) {
@@ -13,6 +14,7 @@ document.getElementById('submit').addEventListener('click', e => {
             'token': token,
             'sound': sound,
             'autocopy': autocopy,
+            'interruption-level': interruptionLevel,
         });
         chrome.storage.sync.set(items, () => {
             console.log('Save item success');
@@ -27,6 +29,21 @@ function createCheckbox(checked, onChange) {
     input.checked = checked || false;
     input.onchange = onChange;
     return input;
+}
+
+function createInterruptionLevel(value, onChange) {
+    var select = document.createElement('select');
+    select.style = "height: 26px; padding-top: 2px; padding-bottom: 2px;";
+    let items = [ "passive", "active", "time-sensitive" ];
+    for (var i = 0; i < items.length; i++) {
+        var option = document.createElement("option");
+        option.text = chrome.i18n.getMessage(items[i].replace("-", "_"));
+        option.value = items[i];
+        select.appendChild(option);
+    }
+    select.value = value || "active";
+    select.onchange = onChange;
+    return select;
 }
 
 function createButton(name, onClick) {
@@ -97,6 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }));
                 row.insertCell().appendChild(createCheckbox(item['autocopy'], e => {
                     updateItem(key, { 'autocopy': e.target.checked });
+                }));
+                row.insertCell().appendChild(createInterruptionLevel(item['interruption-level'], e => {
+                    updateItem(key, { 'interruption-level': e.target.value });
                 }));
                 row.insertCell().appendChild(createButton('delete', () => {
                     deleteItem(key);
