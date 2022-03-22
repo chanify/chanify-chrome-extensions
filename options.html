@@ -17,13 +17,14 @@
         <label for="token" data-localize="__MSG_token__:"></label>
         <input id="token" type="text" style="width:60%" value="" data-localize-placeholder="__MSG_channel_token__" />
         <label for="interruption-level" data-localize="__MSG_interruption_level__:"></label>
-        <select id="interruption-level" style="height: 26px; padding-top: 2px; padding-bottom: 2px;">
+        <select id="interruption-level" style="font-size: small; height: 20px; padding-top: 2px; padding-bottom: 2px;">
             <option value="passive" data-localize="__MSG_passive__"></option>
             <option value="active" data-localize="__MSG_active__" selected></option>
             <option value="time-sensitive" data-localize="__MSG_time_sensitive__"></option>
         </select>
-        <input id="sound" type="checkbox" />
-        <label for="sound" data-localize="__MSG_sound__"></label>
+        <label for="sound" data-localize="__MSG_sound__:"></label><br/>
+        <input id="sound" style="margin-top: 3px;" type="checkbox" />
+        <select id="sound-name" style="font-size: small; display: inline-block; height: 20px; padding-top: 0px; padding-bottom: 0px;"></select>
         <br/>
         <input id="autocopy" type="checkbox" />
         <label for="autocopy" data-localize="__MSG_autocopy__"></label>
@@ -37,11 +38,11 @@
     <table>
         <thead>
             <tr>
-                <th style="width: 100px;" data-localize="__MSG_name__"></th>
+                <th style="width: 90px;" data-localize="__MSG_name__"></th>
                 <th style="width: 120px;" data-localize="__MSG_endpoint__"></th>
                 <th style="width: 120px;" data-localize="__MSG_token__"></th>
-                <th style="width: 50px;" data-localize="__MSG_sound__"></th>
-                <th style="width: 50px;" data-localize="__MSG_autocopy__"></th>
+                <th style="width: 90px;" data-localize="__MSG_sound__"></th>
+                <th style="width: 40px;" data-localize="__MSG_autocopy__"></th>
                 <th style="width: 90px;" data-localize="__MSG_interruption_level__"></th>
                 <th style="width: 50px;" data-localize="__MSG_action__"></th>
             </tr>

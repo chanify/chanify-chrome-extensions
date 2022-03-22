@@ -21,5 +21,6 @@
     "add": { "message": "Add" },
     "delete": { "message": "Delete" },
     "action": { "message": "Action" },
-    "send_text": { "message": "Send text" }
+    "send_text": { "message": "Send text" },
+    "default": { "message": "Default" }
 }

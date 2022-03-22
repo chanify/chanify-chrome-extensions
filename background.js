@@ -65,12 +65,16 @@ function sendTo(form) {
                     }
                     form.append('token', item['token']);
                     if (item['sound']) {
-                        form.append('sound', '1');
+                        let soundName = item['sound-name'] || '';
+                        if (soundName.length <= 1) {
+                            soundName = '1';
+                        }
+                        form.append('sound', soundName);
                     }
                     if (item['autocopy']) {
                         form.append('autocopy', 1);
                     }
-                    let interruptionLevel = item['interruption-level'] || "";
+                    let interruptionLevel = item['interruption-level'] || '';
                     if (interruptionLevel.length > 0) {
                         form.append('interruption-level', interruptionLevel);
                     }
@@ -95,7 +99,7 @@ function onSendClicked(info) {
     if (info.menuItemId == 'chsent/selection' && info.selectionText != null && info.selectionText.length > 0) {
         form.append('text', info.selectionText);
         sendTo(form);
-    } else if (info.mediaType == 'image' && info.menuItemId != "chsent/link") {
+    } else if (info.mediaType == 'image' && info.menuItemId != 'chsent/link') {
         var imgUrl = info.srcUrl;
         if (imgUrl.startsWith('data:')) {
             let data = base64ToBlob(imgUrl);

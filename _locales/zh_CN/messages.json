@@ -21,5 +21,6 @@
     "add": { "message": "添加" },
     "delete": { "message": "删除" },
     "action": { "message": "操作" },
-    "send_text": { "message": "发送文本" }
+    "send_text": { "message": "发送文本" },
+    "default": { "message": "默认" }
 }
